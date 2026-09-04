@@ -359,7 +359,7 @@ public class ChunkRenderer : MonoBehaviour
             waterVertices.Add(new Vector3(x, y1, z1) + blockPosition);
             waterVertices.Add(new Vector3(x, y1, z0) + blockPosition);
             
-            AddLastUVs(waterUVs, blockConfig, BlockFaceOffset.Right, playerDirection);
+            AddLastUVs(waterUVs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Right, playerDirection);
             AddLastVerticiesSquare(waterTriangles, waterVertices);
         }
         else
@@ -369,7 +369,7 @@ public class ChunkRenderer : MonoBehaviour
             blocksVertices.Add(new Vector3(x, y1, z1) + blockPosition); // top-left
             blocksVertices.Add(new Vector3(x, y1, z0) + blockPosition); // top-right
             
-            AddLastUVs(blocksUvs, blockConfig, BlockFaceOffset.Right, playerDirection);
+            AddLastUVs(blocksUvs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Right, playerDirection);
             AddLastVerticiesSquare(blocksTriangles, blocksVertices);
         }
     }
@@ -389,7 +389,7 @@ public class ChunkRenderer : MonoBehaviour
             waterVertices.Add(new Vector3(x, y0, z1) + blockPosition);
             waterVertices.Add(new Vector3(x, y1, z0) + blockPosition);
             waterVertices.Add(new Vector3(x, y1, z1) + blockPosition);
-            AddLastUVs(waterUVs, blockConfig, BlockFaceOffset.Left, playerDirection);
+            AddLastUVs(waterUVs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Left, playerDirection);
             AddLastVerticiesSquare(waterTriangles, waterVertices);
         }
         else
@@ -398,7 +398,7 @@ public class ChunkRenderer : MonoBehaviour
             blocksVertices.Add(new Vector3(x, y0, z1) + blockPosition);
             blocksVertices.Add(new Vector3(x, y1, z0) + blockPosition);
             blocksVertices.Add(new Vector3(x, y1, z1) + blockPosition);
-            AddLastUVs(blocksUvs, blockConfig, BlockFaceOffset.Left, playerDirection);
+            AddLastUVs(blocksUvs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Left, playerDirection);
             AddLastVerticiesSquare(blocksTriangles, blocksVertices);
         }
     }
@@ -419,7 +419,7 @@ public class ChunkRenderer : MonoBehaviour
             waterVertices.Add(new Vector3(x1, y0, z) + blockPosition);
             waterVertices.Add(new Vector3(x0, y1, z) + blockPosition);
             waterVertices.Add(new Vector3(x1, y1, z) + blockPosition);
-            AddLastUVs(waterUVs, blockConfig, BlockFaceOffset.Front, playerDirection);
+            AddLastUVs(waterUVs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Front, playerDirection);
             AddLastVerticiesSquare(waterTriangles, waterVertices);
         }
         else
@@ -428,7 +428,7 @@ public class ChunkRenderer : MonoBehaviour
             blocksVertices.Add(new Vector3(x1, y0, z) + blockPosition);
             blocksVertices.Add(new Vector3(x0, y1, z) + blockPosition);
             blocksVertices.Add(new Vector3(x1, y1, z) + blockPosition);
-            AddLastUVs(blocksUvs, blockConfig, BlockFaceOffset.Front, playerDirection);
+            AddLastUVs(blocksUvs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Front, playerDirection);
             AddLastVerticiesSquare(blocksTriangles, blocksVertices);
         }
     }
@@ -449,7 +449,7 @@ public class ChunkRenderer : MonoBehaviour
             waterVertices.Add(new Vector3(x0, y0, z) + blockPosition);
             waterVertices.Add(new Vector3(x1, y1, z) + blockPosition);
             waterVertices.Add(new Vector3(x0, y1, z) + blockPosition);
-            AddLastUVs(waterUVs, blockConfig, BlockFaceOffset.Back, playerDirection);
+            AddLastUVs(waterUVs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Back, playerDirection);
             AddLastVerticiesSquare(waterTriangles, waterVertices);
         }
         else
@@ -458,7 +458,7 @@ public class ChunkRenderer : MonoBehaviour
             blocksVertices.Add(new Vector3(x0, y0, z) + blockPosition);
             blocksVertices.Add(new Vector3(x1, y1, z) + blockPosition);
             blocksVertices.Add(new Vector3(x0, y1, z) + blockPosition);
-            AddLastUVs(blocksUvs, blockConfig, BlockFaceOffset.Back, playerDirection);
+            AddLastUVs(blocksUvs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Back, playerDirection);
             AddLastVerticiesSquare(blocksTriangles, blocksVertices);
         }
     }
@@ -479,7 +479,7 @@ public class ChunkRenderer : MonoBehaviour
             waterVertices.Add(new Vector3(x0, y, z1) + blockPosition);
             waterVertices.Add(new Vector3(x1, y, z0) + blockPosition);
             waterVertices.Add(new Vector3(x1, y, z1) + blockPosition);
-            AddLastUVs(waterUVs, blockConfig, BlockFaceOffset.Top, playerDirection);
+            AddLastUVs(waterUVs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Top, playerDirection);
             AddLastVerticiesSquare(waterTriangles, waterVertices);
         }
         else
@@ -488,7 +488,7 @@ public class ChunkRenderer : MonoBehaviour
             blocksVertices.Add(new Vector3(x0, y, z1) + blockPosition);
             blocksVertices.Add(new Vector3(x1, y, z0) + blockPosition);
             blocksVertices.Add(new Vector3(x1, y, z1) + blockPosition);
-            AddLastUVs(blocksUvs, blockConfig, BlockFaceOffset.Top, playerDirection);
+            AddLastUVs(blocksUvs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Top, playerDirection);
             AddLastVerticiesSquare(blocksTriangles, blocksVertices);
         }
     }
@@ -509,7 +509,7 @@ public class ChunkRenderer : MonoBehaviour
             waterVertices.Add(new Vector3(x1, y, z0) + blockPosition);
             waterVertices.Add(new Vector3(x0, y, z1) + blockPosition);
             waterVertices.Add(new Vector3(x1, y, z1) + blockPosition);
-            AddLastUVs(waterUVs, blockConfig, BlockFaceOffset.Bottom, playerDirection);
+            AddLastUVs(waterUVs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Bottom, playerDirection);
             AddLastVerticiesSquare(waterTriangles, waterVertices);
         }
         else
@@ -518,7 +518,7 @@ public class ChunkRenderer : MonoBehaviour
             blocksVertices.Add(new Vector3(x1, y, z0) + blockPosition);
             blocksVertices.Add(new Vector3(x0, y, z1) + blockPosition);
             blocksVertices.Add(new Vector3(x1, y, z1) + blockPosition);
-            AddLastUVs(blocksUvs, blockConfig, BlockFaceOffset.Bottom, playerDirection);
+            AddLastUVs(blocksUvs, blockConfig, rotatedOffset, rotatedSize, BlockFaceOffset.Bottom, playerDirection);
             AddLastVerticiesSquare(blocksTriangles, blocksVertices);
         }
     }
@@ -534,11 +534,15 @@ public class ChunkRenderer : MonoBehaviour
         triangles.Add(vertices.Count - 2);
     }
 
-    private void AddLastUVs(List<Vector2> uvs, BlockConfig blockConfig, BlockFaceOffset faceOffset, byte direction)
+    private void AddLastUVs(
+        List<Vector2> uvs,
+        BlockConfig blockConfig,
+        Vector3 rotatedOffset,
+        Vector3 rotatedSize,
+        BlockFaceOffset faceOffset,
+        byte direction)
     {
         BlockFaceOffset rotatedFace = RotateFace(faceOffset, direction, blockConfig);
-        BlockFaceOffset sizedFace = RotateFaceOffset(faceOffset, direction);
-        var (rotatedOffset, rotatedSize) = BlockGeometry.RotateBounds(blockConfig.offset, blockConfig.size, direction);
 
         Vector2Int tile = GetTile(blockConfig, rotatedFace);
 
@@ -547,28 +551,31 @@ public class ChunkRenderer : MonoBehaviour
         float y0 = (float)tile.y * pixelsPerTile / atlasHeight;
         float y1 = (float)(tile.y + 1) * pixelsPerTile / atlasHeight;
         
-        float uSize = sizedFace switch
+        // The mesh faces are generated from the rotated bounds.  UV cropping must
+        // use those same bounds; using the source config here stretches or clips
+        // thin blocks after they are rotated (doors and open trapdoors in particular).
+        float uSize = faceOffset switch
         {
             BlockFaceOffset.Top    or BlockFaceOffset.Bottom => rotatedSize.x,
             BlockFaceOffset.Front  or BlockFaceOffset.Back   => rotatedSize.x,
             BlockFaceOffset.Left   or BlockFaceOffset.Right  => rotatedSize.z,
             _ => 1f
         };
-        float vSize = sizedFace switch
+        float vSize = faceOffset switch
         {
             BlockFaceOffset.Top    or BlockFaceOffset.Bottom => rotatedSize.z,
             BlockFaceOffset.Front  or BlockFaceOffset.Back   => rotatedSize.y,
             BlockFaceOffset.Left   or BlockFaceOffset.Right  => rotatedSize.y,
             _ => 1f
         };
-        float uOffset = sizedFace switch
+        float uOffset = faceOffset switch
         {
             BlockFaceOffset.Top    or BlockFaceOffset.Bottom => rotatedOffset.x,
             BlockFaceOffset.Front  or BlockFaceOffset.Back   => rotatedOffset.x,
             BlockFaceOffset.Left   or BlockFaceOffset.Right  => rotatedOffset.z,
             _ => 0f
         };
-        float vOffset = sizedFace switch
+        float vOffset = faceOffset switch
         {
             BlockFaceOffset.Top    or BlockFaceOffset.Bottom => rotatedOffset.z,
             _ => rotatedOffset.y
@@ -607,41 +614,6 @@ public class ChunkRenderer : MonoBehaviour
         int rotatedIndex = (currentIndex - (int)direction + 8) % 4;
     
         return order[rotatedIndex];
-    }
-    
-    private BlockFaceOffset RotateFaceOffset(BlockFaceOffset face, byte direction)
-    {
-        if (face == BlockFaceOffset.Top || face == BlockFaceOffset.Bottom) return face;
-    
-        return direction switch
-        {
-            0 => face,
-            1 => face switch
-            {
-                BlockFaceOffset.Front => BlockFaceOffset.Right,
-                BlockFaceOffset.Right => BlockFaceOffset.Back,
-                BlockFaceOffset.Back  => BlockFaceOffset.Left,
-                BlockFaceOffset.Left  => BlockFaceOffset.Front,
-                _ => face
-            },
-            2 => face switch
-            {
-                BlockFaceOffset.Front => BlockFaceOffset.Back,
-                BlockFaceOffset.Back  => BlockFaceOffset.Front,
-                BlockFaceOffset.Left  => BlockFaceOffset.Right,
-                BlockFaceOffset.Right => BlockFaceOffset.Left,
-                _ => face
-            },
-            3 => face switch
-            {
-                BlockFaceOffset.Front => BlockFaceOffset.Left,
-                BlockFaceOffset.Left  => BlockFaceOffset.Back,
-                BlockFaceOffset.Back  => BlockFaceOffset.Right,
-                BlockFaceOffset.Right => BlockFaceOffset.Front,
-                _ => face
-            },
-            _ => face
-        };
     }
     
     private (Vector3 offset, Vector3 size) RotateBlockConfig(Vector3 offset, Vector3 size, byte direction)
