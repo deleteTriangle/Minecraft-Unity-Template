@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c88e21005af4347bd673c148c9f1348, type: 3}
+  m_Name: Wave1
+  m_EditorClassIdentifier: 
+  countdownDuration: 5
+  waveDuration: 20
+  spawnGroups:
+  - config: {fileID: 11400000, guid: 8b7b6fd25b528994e8ea155501df1728, type: 2}
+    count: 10
+    delayBeforeSpawn: 1
+  - config: {fileID: 11400000, guid: fbe9d5457ca61484b9e72f56d1f5761b, type: 2}
+    count: 4
+    delayBeforeSpawn: 1

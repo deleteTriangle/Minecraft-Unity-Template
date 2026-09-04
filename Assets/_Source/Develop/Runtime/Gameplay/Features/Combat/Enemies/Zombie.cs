@@ -1,0 +1,15 @@
+using UnityEngine;
+
+public class Zombie : Enemy
+{
+    public override void Init(EntityConfig config)
+    {
+        base.Init(config);
+    }
+
+    public override void Attack(IDamageable target)
+    {
+        target.TakeDamage(AttackDamage);
+        Debug.Log($"Zombie attacks for {AttackDamage} damage");
+    }
+}

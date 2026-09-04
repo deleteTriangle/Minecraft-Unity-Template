@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6094a49575fc48a989d1190013fe5926, type: 3}
+  m_Name: Door
+  m_EditorClassIdentifier:
+  icon: {fileID: 0}
+  type: 6
+  baseId: 9
+  timeToDestroy: 1
+  states:
+  - {fileID: 11400000, guid: b77edc2ed62f4534aa675edf14256e1a, type: 2}
+  - {fileID: 11400000, guid: a26e5780d8dc4e37874dd58b1cdd3df9, type: 2}
+  isComplex: 1
+  faceOffsets: 000000000000000000000000000000000000000000000000
+  size: {x: 1, y: 1, z: 0.1875}
+  offset: {x: 0, y: 0, z: 0.8125}
