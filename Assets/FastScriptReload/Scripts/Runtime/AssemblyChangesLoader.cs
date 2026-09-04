@@ -222,7 +222,7 @@ namespace FastScriptReload.Runtime
                     return;
                 }
 
-                foreach (var instanceOfType in GameObject.FindObjectsOfType(originalType)) //TODO: perf - could find them in different way?
+                foreach (var instanceOfType in UnityEngine.Object.FindObjectsByType(originalType, FindObjectsInactive.Exclude))
                 {
                     onScriptHotReloadFn.Invoke(instanceOfType, null);
                 }
